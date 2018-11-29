@@ -1,18 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import { Typography, Button, Paper } from '@material-ui/core';
+import { Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+
+import Counter from './Counter';
+import Form from './Form';
 
 const useStyles = makeStyles(theme => ({
   root: {
     height: '100%',
+    padding: theme.spacing.unit * 3,
     background: '#DDD',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    '& > *:not(:last-child)': {
+      marginBottom: theme.spacing.unit * 4,
+    },
   },
   container: {
+    width: 400,
     padding: theme.spacing.unit * 2,
+    margin: [[0, 'auto']],
     '& > *:not(:last-child)': {
       marginRight: theme.spacing.unit,
     },
@@ -20,34 +26,15 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const App = () => {
-  const [count, setCount] = useState(0);
   const classes = useStyles();
-
-  useEffect(() => {
-    document.title = `The count is at ${count}`;
-  });
 
   return (
     <div className={classes.root}>
       <Paper className={classes.container}>
-        <Typography gutterBottom>Current count: {count}</Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => setCount(count + 1)}
-        >
-          Increment
-        </Button>
-        <Button
-          variant="contained"
-          color="secondary"
-          onClick={() => setCount(count - 1)}
-        >
-          Decrement
-        </Button>
-        <Button variant="contained" onClick={() => setCount(0)}>
-          Reset
-        </Button>
+        <Counter />
+      </Paper>
+      <Paper className={classes.container}>
+        <Form />
       </Paper>
     </div>
   );
