@@ -2,7 +2,7 @@
   "name": "base-js",
   "version": "1.0.0",
   "description": "Base JS package",
-  "main": "index.js",
+  "main": "src/index.jsx",
   "author": "Max Dubrinsky",
   "license": "MIT",
   "scripts": {
