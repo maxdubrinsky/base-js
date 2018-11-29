@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import { Typography, Button, Paper } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
+import { Typography, Button, Paper } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: "100%",
-    background: "#DDD",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
+    height: '100%',
+    background: '#DDD',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   container: {
     padding: theme.spacing.unit * 2,
-    "& > *:not(:last-child)": {
-      marginRight: theme.spacing.unit
-    }
-  }
+    '& > *:not(:last-child)': {
+      marginRight: theme.spacing.unit,
+    },
+  },
 }));
 
 const App = () => {
